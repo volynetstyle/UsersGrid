@@ -1,0 +1,12 @@
+.MainSection {
+  display: flex;
+  padding: 2rem 6rem; 
+
+  @media (max-width: 1024px) {
+    padding: 2rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
+}

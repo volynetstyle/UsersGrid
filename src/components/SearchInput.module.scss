@@ -1,0 +1,111 @@
+:root {
+  --border-width: 1px;
+  --background-level1: #f5f5f5; /* Replace with your custom background color */
+  --divider: #dcdcdc; /* Replace with your custom divider color */
+  --text-tertiary: #a0a0a0; /* Replace with your custom text color */
+  --primary-500: #007bff; /* Replace with your custom primary color */
+  --background-level2: #e0e0e0; /* Replace with your custom background color */
+  --background-level3: #c0c0c0; /* Replace with your custom background color */
+}
+
+.searchInputRoot {
+  --border-width: 1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1px;
+  background-color: var(--background-level1);
+  border: var(--border-width) solid var(--divider);
+  border-radius: 1.375rem;
+  padding: calc(0.4375rem - var(--border-width))
+    calc(0.75rem - var(--border-width)) calc(0.5775rem - var(--border-width))
+    calc(0.75rem - var(--border-width));
+  border-width: var(--border-width);
+  height: 2.5rem;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    margin-bottom: 0;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: none !important;
+
+    &::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.noLabels {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.separator {
+  width: 2px;
+  height: 24px;
+  margin: 0 4px;
+  background-color: var(--primary-500);
+  border-radius: 2px;
+}
+
+.focused {
+  outline: 2px solid var(--primary-500);
+}
+
+.searchIcon,
+.clearIcon {
+  margin-top: 0.1375rem !important;
+  font-size: 1.375rem;
+  line-height: 1;
+  color: var(--primary-500);
+}
+
+.clearIcon {
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--background-level2);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: var(--background-level3);
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+
+  &:focus,
+  &:focus:not(:focus-visible),
+  &:focus-within {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
