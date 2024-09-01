@@ -8,7 +8,7 @@ import useLastCallback from "./lib/hooks/useLastCallback";
 import { debounce } from "./lib/utils/schedulers";
 import { selectFoundedCount } from "./store/selectors/user";
 import { formatCount } from "./components/utils/formatCount";
-import SetTheme from "./components/SetTheme";
+import SwitchTheme from "./components/SwitchTheme";
 
 const DEBOUNCE_DURATION = 250;
 
@@ -31,14 +31,42 @@ function App() {
     dispatch(resetSearchQuery());
   });
 
+  const renderCount = () => (
+    <section aria-describedby="founded-count">
+      <p>{formatCount(users)}</p>
+    </section>
+  );
+  
+  const renderFooter = () => (
+    <footer>
+      <div className={s.footerContent}>
+        <div className={s.footerLinks}>
+          <p>@2022 All rights reserved</p>
+          <p>
+            Created by{" "}
+            <a href="https://github.com/volynetstyle">Andrii Volynets</a>
+          </p>
+          <p>
+            SourceCode available on{" "}
+            <a href="https://github.com/volynetstyle/UsersGrid">GitHub</a>
+          </p>
+        </div>
+        <SwitchTheme />
+      </div>
+    </footer>
+  );
+
   return (
-    <div className={s.MainSection}>
-      <SearchInput onChange={handleFilterChange} onReset={handleResetFilters} />
-      <section aria-describedby="founded-count">
-        <p>{formatCount(users)}</p>
+    <div className={s.App}>
+      <section className={s.MainSection}>
+        <SearchInput
+          onChange={handleFilterChange}
+          onReset={handleResetFilters}
+        />
+        {renderCount()}
+        <UsersDisplay />
       </section>
-      <UsersDisplay />
-      <SetTheme />
+      {renderFooter()}
     </div>
   );
 }

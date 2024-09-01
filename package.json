@@ -1,7 +1,14 @@
 {
-  "name": "vite-project",
+  "name": "user-grid",
+  "displayName": "Users Grid",
+  "description": "Grid of users with filtering displayed on the table",
+  "license": "MIT",
+  "keywords": ["users", "grid", "react", "typescript", "redux", "tailwind", "eslint", "prettier", "vite", "eslint-plugin-react-hooks", "eslint-plugin-react-refresh"],
+  "homepage": "https://usergrid.netlify.app/",
+  "author": "Andrii Volynets",
+  "main": "src/index.tsx",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

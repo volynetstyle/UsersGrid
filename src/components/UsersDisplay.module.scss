@@ -129,12 +129,12 @@ $skeleton-animation: skeleton-loading 1.5s infinite ease-in-out;
             float: left;
             font-weight: bold;
             text-transform: uppercase;
-            color: var(--text-secondary);
+            color: var(--text-tertiary);
           }
 
           span {
             font-size: 14px;
-            color: var(--text-secondary);
+            color: var(--text-tertiary);
             display: block;
           }
         }
