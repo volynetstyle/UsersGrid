@@ -58,3 +58,11 @@ Maybe later...
 
 ## Search Example
 <img src="public/search_example.png" width="100%%" />
+
+## All screens 
+
+1. **Responsive Design Screen (640px)**:
+<img src="public/responsive_640.png" width="50%" style="margin-left: 25%"/>
+
+2. **Search Example Screen**:
+<img src="public/responsive_768.png" width="100%" />
