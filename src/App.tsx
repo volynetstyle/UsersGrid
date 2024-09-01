@@ -12,8 +12,8 @@ const DEBOUNCE_DURATION = 250;
 function App() {
   const dispatch = useAppDispatch();
 
-  const handleFilterChange = useLastCallback(debounce((value: string) => {
-    dispatch(setSearchQuery(value));
+  const handleFilterChange = useLastCallback(debounce((e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchQuery(e.target.value));
   }, DEBOUNCE_DURATION, false, true));
 
   const handleResetFilters = useLastCallback(() => {
@@ -25,7 +25,6 @@ function App() {
       <SearchInput
         onChange={handleFilterChange}
         onReset={handleResetFilters}
-        labels={["Name", "Username", "Email", "Phone"]}
       />
       <UsersDisplay />
     </div>
