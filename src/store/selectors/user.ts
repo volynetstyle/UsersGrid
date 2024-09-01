@@ -2,13 +2,20 @@ import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "..";
 import { applySearchQuery } from "../helpers/user";
 
-// Selector for filtering users
+export const selectUserState = (state: RootState) => state.users;
+export const selectSearchQuery = (state: RootState) => state.users.searchQuery;
+
+export const selectUsers = createSelector(
+  [selectUserState],
+  (userState) => userState.users
+);
+
 export const selectFilteredUsers = createSelector(
-  [(state: RootState) => state.users.users, (state: RootState) => state.users.searchQuery],
+  [selectUsers, selectSearchQuery],
   (users, searchQuery) => applySearchQuery(users, searchQuery)
 );
 
 export const selectFoundedCount = createSelector(
-  [(state: RootState) => state.users.filteredUsers],
-  (users) => users.length
-)
+  [selectFilteredUsers],
+  (filteredUsers) => filteredUsers.length
+);

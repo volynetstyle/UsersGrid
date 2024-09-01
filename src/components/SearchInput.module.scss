@@ -13,12 +13,13 @@
   --padding-horizontal: var(--padding);
   --translate: calc(var(--height) + var(--border-width) + 3px);
 
-  --color-divider: #dcdcdc;
-  --color-background: #ffffff;
-  --color-primary: #007bff;
-  --color-text: #333333;
-  --color-error: #dc3545;
-  --color-success: #28a745;
+  --color-divider: var(--divider);
+  --color-background: var(--background-level2);
+  --color-primary: var(--primary-plainColor);
+  --color-text: var(--text-primary);
+
+  --color-background-hover: var(--background-level3);
+  
 
   display: flex;
   align-items: center;

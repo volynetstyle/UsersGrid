@@ -1,12 +1,5 @@
 // Define constants for colors, spacing, and other common values
-$white: #ffffff;
-$gray-light: #dee2e6;
-$gray-lighter: #f8f9fa;
-$gray-lightest: #f0f2f4;
-$gray-hover: #e9ecef;
-$gray-text: #495057;
-$gray-text-muted: #6c757d;
-$gray-border: #b8b9bb;
+$white: var(--common-white);
 $shadow-small: 0 2px 10px rgba(0, 0, 0, 0.05);
 $shadow-large: 0 2px 15px rgba(0, 0, 0, 0.1);
 $border-radius: 12px;
@@ -14,15 +7,34 @@ $padding-default: 16px;
 $font-weight-bold: 600;
 $font-weight-medium: 500;
 
+// Add these to your existing constants
+$skeleton-bg: var(--neutral-100);
+$skeleton-highlight: --neutral-200;
+$skeleton-animation: skeleton-loading 1.5s infinite ease-in-out;
+
+// Define keyframes for skeleton loading animation
+@keyframes skeleton-loading {
+  0% {
+    background-color: $skeleton-bg;
+  }
+  50% {
+    background-color: $skeleton-highlight;
+  }
+  100% {
+    background-color: $skeleton-bg;
+  }
+}
+
 .tableContainer {
   width: 100%;
   box-shadow: $shadow-large;
-  border-radius: $border-radius;
-  border: 2px solid $gray-light;
   overflow: hidden;
 
-  @media (max-width: 768px) {
-    padding: 10px;
+
+  @media (min-width: 768px) {
+    border: 2px solid var(--divider);
+    border-radius: $border-radius;
+
   }
 }
 
@@ -30,45 +42,46 @@ $font-weight-medium: 500;
   width: 100%;
   border-spacing: 0;
   border-collapse: separate;
-  background-color: $white;
+  
 
-  &[data-skeleton="true"] {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+  @media (min-width: 768px) {
+    background-color: var(--background-level1);
   }
 
   thead {
     position: sticky;
     top: 0;
-    background-color: $gray-lighter;
+    background-color: var(--background-level1);
     z-index: 1;
 
     th {
       padding: $padding-default;
       font-weight: $font-weight-bold;
       text-align: left;
-      border-bottom: 2px solid $gray-light;
-      color: $gray-text;
+      border-bottom: 2px solid var(--neutral-200);
+      color: var(--text-primary);
       white-space: nowrap;
     }
   }
 
   tbody {
     tr {
+      border: 2px solid var(--divider);
+      border-radius: $border-radius;
+
       &:nth-child(even) {
-        background-color: $gray-lightest;
+        background-color: var(--background-level2) ;
       }
 
       &:hover {
-        background-color: $gray-hover;
+        background-color: var(--background-level3);
       }
 
       td {
         padding: $padding-default;
-        border-bottom: 1px solid $gray-border;
         vertical-align: middle;
         text-align: left;
-        color: $gray-text;
+        color: var(--text-primary);
 
         p {
           font-size: 16px;
@@ -94,30 +107,34 @@ $font-weight-medium: 500;
     tbody {
       display: grid;
       grid-template-columns: repeat(2, minmax(300px, 1fr));
+      gap: 8px;
 
       tr {
         display: block;
-        margin-bottom: 5px;
-        padding-bottom: 5px;
-        background-color: $gray-lightest !important;
-        border-radius: 8px;
+        margin-top: 4px;
+
+        background-color: var(--background-level2) !important;
         box-shadow: $shadow-small;
 
         td {
           display: block;
           padding: 4px 12px;
+          
+          &:not(:first-of-type) {
+            border-top: 1px solid var(--divider);
+          }
 
           &:before {
             content: attr(data-label);
             float: left;
             font-weight: bold;
             text-transform: uppercase;
-            color: $gray-text-muted;
+            color: var(--text-secondary);
           }
 
           span {
             font-size: 14px;
-            color: $gray-text-muted;
+            color: var(--text-secondary);
             display: block;
           }
         }
@@ -126,6 +143,7 @@ $font-weight-medium: 500;
   }
 
   @media (max-width: 640px) {
+    
     tbody {
       display: block !important;
     }

@@ -8,9 +8,9 @@ import useLastCallback from "./lib/hooks/useLastCallback";
 import { debounce } from "./lib/utils/schedulers";
 import { selectFoundedCount } from "./store/selectors/user";
 import { formatCount } from "./components/utils/formatCount";
+import SetTheme from "./components/SetTheme";
 
 const DEBOUNCE_DURATION = 250;
-
 
 function App() {
   const dispatch = useAppDispatch();
@@ -38,6 +38,7 @@ function App() {
         <p>{formatCount(users)}</p>
       </section>
       <UsersDisplay />
+      <SetTheme />
     </div>
   );
 }

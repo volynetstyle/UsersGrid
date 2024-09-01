@@ -39,6 +39,7 @@ const SearchInput: FC<OwnProps> = ({
   focused,
   variant = "move",
   onChange,
+  onReset,
   ...props
 }) => {
   const [isInputFocused, setFocused] = useState(focused);
@@ -61,6 +62,16 @@ const SearchInput: FC<OwnProps> = ({
 
     onChange?.(e);
     setFocused(value.trim().length > 0);
+  });
+
+  const handleReset = useLastCallback((e: ChangeEvent<HTMLInputElement>) => {
+    e.currentTarget.value = "";
+
+    if (ref?.current) {
+      ref.current.focus();
+    }
+
+    onReset?.(e);
   });
 
   const fullClassName = buildClassName(
@@ -109,6 +120,7 @@ const SearchInput: FC<OwnProps> = ({
           required={required}
           className={s.input}
           aria-invalid={!!error}
+          onReset={handleReset}
           aria-describedby={
             error ? `${id}-error` : helperText ? `${id}-helper` : undefined
           }
