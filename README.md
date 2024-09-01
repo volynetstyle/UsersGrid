@@ -64,5 +64,5 @@ Maybe later...
 1. **Responsive Design Screen (640px)**:
 <img src="public/responsive_640.png" width="50%" style="margin-left: 25%"/>
 
-2. **Search Example Screen**:
+2. **Responsive Design Screen (768px)**:
 <img src="public/responsive_768.png" width="100%" />
