@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# User Management Table
+Fully implemented table of user display.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective
 
-Currently, two official plugins are available:
+The goal of this project is to create a React application that showcases the following skills:
+- **Building a User Management Table:** Display user information fetched from a mock API.
+- **Implementing Advanced Filtering:** Enable dynamic search and filtering of user data.
+- **State Management with Redux:** Utilize Redux (Classic Redux or Redux Toolkit) for managing state.
+- **Ensuring Type Safety:** Leverage TypeScript for comprehensive type safety.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Table:** Displays user information including name, username, email, and phone.
+- **Advanced Filtering:** Search and filter users by name, username, email, and phone with real-time updates.
+- **State Management:** Utilizes Redux to manage application state, including user data and filter states.
+- **TypeScript:** Ensures type safety across the application to minimize runtime errors.
+- **Responsive Design:** User-friendly and visually appealing design for the table and search inputs.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup Instructions
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/volynetstyle/UsersGrid.git
+   cd UsersGrid
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. **Run the Application:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Deployment
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Live Application:** [Deployed Application Link](https://usergrid.netlify.app/)
+
+## Optional: Explanation of Approach
+
+- **State Management:** I chose to use Redux Toolkit for a more streamlined state management approach. The slice includes actions for fetching users and updating filter states.
+- **Filtering Logic:** Implemented advanced filtering by maintaining filter states in Redux and applying these filters to the user list in real-time.
+- **TypeScript:** Ensured type safety by defining types for user data, state, and Redux actions.
+- **Design:** Focused on creating a responsive and user-friendly interface using SCSS modules for styling.
+
+## Challenges Faced
+Maybe later...
+
+## Application with Theme Example
+<p float="left">
+  <img src="public/light_mode.png" alt="Light Mode" />
+  <img src="public/dark_mode.png" alt="Dark Mode" />
+</p>
+
+## Search Example
+<img src="public/search_example.png" width="100%%" />
