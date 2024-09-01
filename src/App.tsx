@@ -41,7 +41,7 @@ function App() {
     <footer>
       <div className={s.footerContent}>
         <div className={s.footerLinks}>
-          <p>@2022 All rights reserved</p>
+          <p>@2024 All rights reserved</p>
           <p>
             Created by{" "}
             <a href="https://github.com/volynetstyle">Andrii Volynets</a>
