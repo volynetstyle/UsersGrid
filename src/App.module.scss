@@ -1,8 +1,10 @@
 .MainSection {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: #f8f9fa;
+  gap: 8px;
+  padding: 12px;
+  min-height: 100dvh;
   align-items: center;
-
+  max-width: 1200px;
+  margin: 0 auto;
 }

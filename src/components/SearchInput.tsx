@@ -8,13 +8,11 @@ interface OwnProps {
   parentContainerClassName?: string;
   className?: string;
   inputId?: string;
-  value?: string;
   focused?: boolean;
   isLoading?: boolean;
   placeholder?: string;
   disabled?: boolean;
   autoComplete?: string;
-  canClose?: boolean;
   labels?: ReactNode[];
   onChange: (value: string) => void;
   onReset?: () => void;
@@ -27,14 +25,12 @@ const SearchInput: FC<OwnProps> = ({
   parentContainerClassName,
   className,
   inputId,
-  value = "",
   focused,
   isLoading = false,
   placeholder,
   labels,
   disabled = false,
   autoComplete,
-  canClose,
   onChange,
   onReset,
   onFocus,
@@ -73,7 +69,6 @@ const SearchInput: FC<OwnProps> = ({
         type="text"
         dir="auto"
         placeholder={placeholder || "Search"}
-        value={value}
         disabled={disabled}
         autoComplete={autoComplete}
         onChange={handleChange}
@@ -82,14 +77,14 @@ const SearchInput: FC<OwnProps> = ({
         spellCheck="false"
         aria-label="Search input"
       />
-      {!isLoading && (value || canClose) && onReset && (
+      {!isLoading  && onReset && (
         <button
           type="button"
           className={s.clearButton}
           onClick={onReset}
           aria-label="Clear search"
         >
-          {/* Clear button content */}
+          x
         </button>
       )}
     </form>

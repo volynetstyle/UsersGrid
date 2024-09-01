@@ -16,7 +16,6 @@ $font-weight-medium: 500;
 
 .tableContainer {
   width: 100%;
-  max-width: 1200px;
   box-shadow: $shadow-large;
   border-radius: $border-radius;
   border: 2px solid $gray-light;
@@ -32,6 +31,11 @@ $font-weight-medium: 500;
   border-spacing: 0;
   border-collapse: separate;
   background-color: $white;
+
+  &[data-skeleton="true"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
 
   thead {
     position: sticky;
