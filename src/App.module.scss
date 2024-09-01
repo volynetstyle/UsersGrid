@@ -1,12 +1,8 @@
 .MainSection {
   display: flex;
-  padding: 2rem 6rem; 
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  align-items: center;
 
-  @media (max-width: 1024px) {
-    padding: 2rem 4rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 2rem 2rem;
-  }
 }

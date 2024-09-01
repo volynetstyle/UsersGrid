@@ -1,0 +1,129 @@
+// Define constants for colors, spacing, and other common values
+$white: #ffffff;
+$gray-light: #dee2e6;
+$gray-lighter: #f8f9fa;
+$gray-lightest: #f0f2f4;
+$gray-hover: #e9ecef;
+$gray-text: #495057;
+$gray-text-muted: #6c757d;
+$gray-border: #b8b9bb;
+$shadow-small: 0 2px 10px rgba(0, 0, 0, 0.05);
+$shadow-large: 0 2px 15px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$padding-default: 16px;
+$font-weight-bold: 600;
+$font-weight-medium: 500;
+
+.tableContainer {
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: $shadow-large;
+  border-radius: $border-radius;
+  border: 2px solid $gray-light;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  background-color: $white;
+
+  thead {
+    position: sticky;
+    top: 0;
+    background-color: $gray-lighter;
+    z-index: 1;
+
+    th {
+      padding: $padding-default;
+      font-weight: $font-weight-bold;
+      text-align: left;
+      border-bottom: 2px solid $gray-light;
+      color: $gray-text;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: $gray-lightest;
+      }
+
+      &:hover {
+        background-color: $gray-hover;
+      }
+
+      td {
+        padding: $padding-default;
+        border-bottom: 1px solid $gray-border;
+        vertical-align: middle;
+        text-align: left;
+        color: $gray-text;
+
+        p {
+          font-size: 16px;
+          font-weight: $font-weight-medium;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+
+      tr {
+        display: block;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        background-color: $gray-lightest !important;
+        border-radius: 8px;
+        box-shadow: $shadow-small;
+
+        td {
+          display: block;
+          padding: 4px 12px;
+
+          &:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $gray-text-muted;
+          }
+
+          span {
+            font-size: 14px;
+            color: $gray-text-muted;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    tbody {
+      display: block !important;
+    }
+  }
+}
