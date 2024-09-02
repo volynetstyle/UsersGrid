@@ -11,7 +11,6 @@ const initialState: UserState = {
   error: undefined,
 };
 
-
 const userSlice = createSlice({
   name: 'users',
   initialState,
