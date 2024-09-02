@@ -1,5 +1,5 @@
 {
-  "name": "user-grid",
+  "name": "users-grid",
   "displayName": "Users Grid",
   "description": "Grid of users with filtering displayed on the table",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "author": "Andrii Volynets",
   "main": "src/index.tsx",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
