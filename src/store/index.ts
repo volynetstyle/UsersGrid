@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import userReducer from './slices/userSlice';  
-import { IS_DEVELOPMENT } from "../confitg";
+import { IS_DEVELOPMENT } from "../config";
 
 const logger = createLogger({
   collapsed: true,
