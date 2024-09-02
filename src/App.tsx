@@ -4,7 +4,6 @@ import SearchInput from "./components/SearchInput";
 
 import { useAppDispatch } from "./store/hooks";
 import { setSearchQuery, resetSearchQuery } from "./store/slices/userSlice";
-import useLastCallback from "./lib/hooks/useLastCallback";
 import { debounce } from "./lib/utils/schedulers";
 import SwitchTheme from "./components/SwitchTheme";
 import FilteredCount from "./components/FilteredCount";
@@ -14,7 +13,7 @@ const DEBOUNCE_DURATION = 250;
 function App() {
   const dispatch = useAppDispatch();
 
-  const handleFilterChange = useLastCallback(
+  const handleFilterChange =
     debounce(
       (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setSearchQuery(e.target.value));
@@ -23,11 +22,11 @@ function App() {
       false,
       true
     )
-  );
+  
 
-  const handleResetFilters = useLastCallback(() => {
+  const handleResetFilters = () => {
     dispatch(resetSearchQuery());
-  });
+  }
   
   const renderFooter = () => (
     <footer>
