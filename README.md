@@ -58,7 +58,7 @@ Maybe later...
 
 ## Search Example
 You can also easily search for data in each column if you enter the information you need through a space
-<img src="public/advanced_search.png width="100%%" />
+<img src="public/advanced_search.png" width="100%" />
 
 ## All screens 
 
